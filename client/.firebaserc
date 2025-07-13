@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "work-sa-staging",
+    "staging": "work-sa-staging",
+    "prod": "worker-sa-prod"
+  },
+  "targets": {},
+  "etags": {}
+}
