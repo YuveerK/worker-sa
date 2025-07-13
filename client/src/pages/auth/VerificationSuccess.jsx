@@ -14,8 +14,6 @@ const VerificationSuccess = () => {
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-[-1]" />
 
       {/* Registration Card */}
-      {/* Registration Card */}
-      {/* Registration Card */}
       <div className="flex items-center justify-center w-full h-screen overflow-auto">
         <div className="bg-white p-8 rounded-xl shadow-xl w-full max-w-md border border-gray-200">
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
