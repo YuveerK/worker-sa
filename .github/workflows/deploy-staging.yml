@@ -1,0 +1,32 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ./client
+
+      - name: Build Project
+        run: npm run build
+        working-directory: ./client
+
+      - name: Deploy to Firebase Staging
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccountToken: "${{ secrets.FIREBASE_TOKEN }}"
+          projectId: worker-sa-staging
+          channelId: live
+        env:
+          FIREBASE_CLI_EXPERIMENTS: hostingchannels
